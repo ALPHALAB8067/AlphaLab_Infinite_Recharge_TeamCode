@@ -33,6 +33,11 @@ public final class Constants {
         public static final double kArmRampRate = 0.5;
 		public static double kArmUpSpeed = 0.6;
 		public static double kArmDownSpeed= -0.6;
+        public static double kArmFullSpeed = 1.0;
+        public static double kArmThreeQuarterSpeed = 0.75;
+        public static double kArmHalfSpeed = 0.5;
+        public static double kArmQuarterSpeed = 0.25;
+        public static double kArmZeroSpeed = 0.00;
         
     }
 

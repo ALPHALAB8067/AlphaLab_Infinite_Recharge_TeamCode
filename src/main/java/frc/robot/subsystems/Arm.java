@@ -48,6 +48,26 @@ public class Arm extends SubsystemBase {
     m_armMotor.set(ArmConstants.kArmDownSpeed);
   }
 
+  public void armFullSpeed() {
+    m_armMotor.set(ArmConstants.kArmFullSpeed);
+  }
+
+  public void armThreeQuarterSpeed() {
+    m_armMotor.set(ArmConstants.kArmThreeQuarterSpeed);
+  }
+
+  public void armHalfSpeed() {
+    m_armMotor.set(ArmConstants.kArmHalfSpeed);
+  }
+
+  public void armQuarterSpeed() {
+    m_armMotor.set(ArmConstants.kArmQuarterSpeed);
+  }
+
+  public void armZeroSpeed() {
+    m_armMotor.set(ArmConstants.kArmZeroSpeed);
+  }
+
 
 
 }

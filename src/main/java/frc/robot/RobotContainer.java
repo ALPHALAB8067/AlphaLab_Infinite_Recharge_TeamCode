@@ -11,9 +11,14 @@ import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 //import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import frc.robot.commands.ArmDown;
-import frc.robot.commands.ArmOff;
-import frc.robot.commands.ArmUp;
+//import frc.robot.commands.ArmDown;
+import frc.robot.commands.ArmFullSpeed;
+import frc.robot.commands.ArmHalfSpeed;
+//import frc.robot.commands.ArmOff;
+import frc.robot.commands.ArmQuaterSpeed;
+import frc.robot.commands.ArmThreeQuarterSpeed;
+//import frc.robot.commands.ArmUp;
+import frc.robot.commands.ArmZeroSpeed;
 //import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.commands.DriveCommand;
 import frc.robot.subsystems.Arm;
@@ -48,7 +53,7 @@ private final Arm m_armSubsystem = new Arm();
 
     // Commandes par défaut 
     m_basePilotable.setDefaultCommand(new DriveCommand(()->m_stick.getY(), ()->m_stick.getX(), m_basePilotable));
-    m_armSubsystem.setDefaultCommand(new ArmUp(m_armSubsystem));
+    m_armSubsystem.setDefaultCommand(new ArmZeroSpeed(m_armSubsystem));
      }
 
   /**
@@ -61,8 +66,23 @@ private final Arm m_armSubsystem = new Arm();
 
 
     new JoystickButton(m_stick, JoystickButtonConstants.kL3)
-    .whenPressed(new ArmUp(m_armSubsystem));
+    .whenPressed(new ArmZeroSpeed(m_armSubsystem));
 
+    new JoystickButton(m_stick, JoystickButtonConstants.kL3)
+    .whenPressed(new ArmQuaterSpeed(m_armSubsystem));
+
+    new JoystickButton(m_stick, JoystickButtonConstants.kL3)
+    .whenPressed(new ArmHalfSpeed(m_armSubsystem));
+
+    new JoystickButton(m_stick, JoystickButtonConstants.kL3)
+    .whenPressed(new ArmThreeQuarterSpeed(m_armSubsystem));
+
+    new JoystickButton(m_stick, JoystickButtonConstants.kL3)
+    .whenPressed(new ArmFullSpeed(m_armSubsystem));
+
+
+
+  /**
     JoystickButton armUpButton = new JoystickButton(m_stick, JoystickButtonConstants.kL3);
     armUpButton.whileHeld(new ArmUp(m_armSubsystem));
 
@@ -73,7 +93,7 @@ private final Arm m_armSubsystem = new Arm();
   new JoystickButton(m_stick, JoystickButtonConstants.kR3).whenPressed(new ArmDown(m_armSubsystem));
 
   new JoystickButton(m_stick, JoystickButtonConstants.kL3).whenPressed(new ArmOff(m_armSubsystem));
-    
+     */
 
 
 
